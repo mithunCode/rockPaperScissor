@@ -15,43 +15,42 @@ let next = document.querySelector(".next");
 let nextBtn = document.querySelector(".nextBtn");
 let playerWin = document.querySelector(".playerWin");
 let pcWin = document.querySelector(".pcWin");
-
 let winMessage = "";
 
 const computerArray = ["rock", "paper", "scissor"];
 
 rulebtn.style.display = "none";
 
-function setScore() {
+const setScore = () => {
   pScore.innerHTML = playerScore;
   cScore.innerHTML = computerScore;
-}
+};
 setScore();
 
-function closeBtn() {
+const closeBtn = () => {
   rulebtn.style.display = "none";
-}
+};
 
-function handleRules() {
+const handleRules = () => {
   if (rulebtn.style.display === "none") {
     rulebtn.style.display = "block";
   } else {
     rulebtn.style.display = "none";
   }
-}
+};
 
-function playAgain() {
+const playAgain = () => {
   setScore();
   rulebtn.style.display = "none";
   location.reload();
-}
+};
 
-function winnerMessage(res) {
+const winnerMessage = (res) => {
   winMessage =
     `<div class='winmsg'><h3> YOU ` +
     `${res}` +
     `</h3> <p>AGAINST PC</p><button class='playAgainBtn' onclick="playAgain()" > Play Again</button></div>`;
-}
+};
 
 const victory = () => {
   scoreContainer.style.display = "none";
@@ -60,9 +59,9 @@ const victory = () => {
   next.style.display = "none";
 };
 
-function handleSelect(value) {
+const handleSelect = (value) => {
   gameRow.style.display = "none";
-  var winner = false;
+  var winner = "";
   let playerChoice = value;
   let computerChoice =
     computerArray[Math.floor(Math.random() * computerArray.length)];
@@ -77,7 +76,7 @@ function handleSelect(value) {
     (playerChoice === "scissor" && computerChoice === "paper")
   ) {
     playerScore += 1;
-    winner = true;
+    winner = "player";
     localStorage.setItem("pScore", playerScore);
     pScore.innerHTML = playerScore;
     winnerMessage("WIN");
@@ -88,7 +87,7 @@ function handleSelect(value) {
     );
   } else {
     computerScore += 1;
-    winner = true;
+    winner = "pc";
     localStorage.setItem("cScore", computerScore);
     cScore.innerHTML = computerScore;
     winnerMessage("LOST");
@@ -103,13 +102,13 @@ function handleSelect(value) {
           <p>Computer Picked</p>
         </div>
         <div class="resultShow">
-        <div class="${winner} ? 'green1' : none ">
+        <div class="winPlayer">
           <div class="${playerChoice}Select " >
             <img src="${playerSrc}" alt="" />
           </div>
           </div>
          ${winMessage}
-         <div class="${winner}? 'green1' : ''"> 
+         <div class="winPc"> 
           <div class="${computerChoice}Select ">
           <img src="${computerSrc}" alt="" />
           </div>
@@ -118,4 +117,8 @@ function handleSelect(value) {
       </div>
   `;
   gameRow.insertAdjacentHTML("AfterEnd", resultDiv);
-}
+  let winPlayer = document.querySelector(".winPlayer");
+  let winPc = document.querySelector(".winPc");
+  winner == "player" ? winPlayer.classList.add("green1") : "";
+  winner == "pc" ? winPc.classList.add("green1") : "";
+};
