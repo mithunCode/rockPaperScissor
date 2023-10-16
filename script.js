@@ -112,13 +112,13 @@ const handleSelect = (value) => {
         <div class="resultShow">
         <div class="winPlayer">
           <div class="${playerChoice}Select " >
-            <img src="${playerSrc}" alt="" />
+            <img src="./assets/${playerSrc}" alt="" />
           </div>
           </div>
          ${winMessage}
          <div class="winPc"> 
           <div class="${computerChoice}Select ">
-          <img src="${computerSrc}" alt="" />
+          <img src="./assets/${computerSrc}" alt="" />
           </div>
           </div>
         </div>
