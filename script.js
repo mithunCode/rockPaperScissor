@@ -21,16 +21,20 @@ const computerArray = ["rock", "paper", "scissor"];
 
 rulebtn.style.display = "none";
 
+// SET_SCORE
+
 const setScore = () => {
   pScore.innerHTML = playerScore;
   cScore.innerHTML = computerScore;
 };
 setScore();
 
+//CLOSE_BUTTON
 const closeBtn = () => {
   rulebtn.style.display = "none";
 };
 
+//DISPLAY_RULES
 const handleRules = () => {
   if (rulebtn.style.display === "none") {
     rulebtn.style.display = "block";
@@ -39,12 +43,14 @@ const handleRules = () => {
   }
 };
 
+//PLAY_AGAIN_BUTTON
 const playAgain = () => {
   setScore();
   rulebtn.style.display = "none";
   location.reload();
 };
 
+//WINNER_MESSAGE
 const winnerMessage = (res) => {
   winMessage =
     `<div class='winmsg'><h3> YOU ` +
@@ -52,6 +58,7 @@ const winnerMessage = (res) => {
     `</h3> <p>AGAINST PC</p><button class='playAgainBtn' onclick="playAgain()" > Play Again</button></div>`;
 };
 
+//VICTORY_PAGE
 const victory = () => {
   scoreContainer.style.display = "none";
   mainGame.style.display = "none";
@@ -59,6 +66,7 @@ const victory = () => {
   next.style.display = "none";
 };
 
+//MAINCODE
 const handleSelect = (value) => {
   gameRow.style.display = "none";
   var winner = "";
