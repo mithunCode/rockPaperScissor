@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissor</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dangrek&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <!-- SCORE -->
+      <div class="scoreContainer">
+        <div class="title">
+          <p>ROCK</p>
+          <p>PAPER</p>
+          <p>SCISSOR</p>
+        </div>
+        <div class="scoreCard">
+          <div class="humanScore">
+            <div>
+              COMPUTER <br />
+              SCORE
+            </div>
+            <div class="cScore">0</div>
+          </div>
+          <div class="computerScore">
+            <div>
+              YOUR <br />
+              SCORE
+            </div>
+            <div class="pScore">0</div>
+          </div>
+        </div>
+      </div>
+      <!--Game Design-->
+      <div class="mainGame">
+        <div class="gameRow">
+          <div class="firstRow">
+            <div class="rockSelect" onclick="handleSelect('rock')">
+              <img src="/assets/rock.png" alt="" />
+              <div class="bridgeline1"></div>
+              <div class="bridgeline2"></div>
+            </div>
+            <div class="scissorSelect" onclick="handleSelect('scissor')">
+              <img src="/assets/scissor.png" alt="" />
+              <div class="bridgeline3"></div>
+            </div>
+          </div>
+          <div class="secondRow">
+            <div class="paperSelect" onclick="handleSelect('paper')">
+              <img src="/assets/paper.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--RESULT DIV-->
+
+      <!--Rule Button-->
+      <div>
+        <div class="ruleBoard">
+          <p class="GameHeader">Game Rules</p>
+          <div class="ruleList">
+            <div class="listItem">
+              <span class="square"></span>
+              <p>
+                Rock beats scissors, scissors beat paper, and paper beats rock.
+              </p>
+            </div>
+            <div class="listItem">
+              <span class="square"></span>
+              <p>
+                Agree ahead of time whether you’ll count off “rock, paper,
+                scissors, shoot” or just “rock, paper, scissors.”
+              </p>
+            </div>
+            <div class="listItem">
+              <span class="square"></span>
+              <p>
+                Use rock, paper, scissors to settle minor decisions or simply
+                play to pass the time
+              </p>
+            </div>
+            <div class="listItem">
+              <span class="square">&nbsp;</span>
+              <p>
+                If both players lay down the same hand, each player lays down
+                another hand
+              </p>
+            </div>
+          </div>
+          <button class="closebtn" onclick="closeBtn()">X</button>
+        </div>
+      </div>
+      <div class="btnContainer">
+        <button class="rulebtn" onclick="handleRules()">RULES</button>
+      </div>
+      <div class="next"></div>
+
+      <section class="victoryPage">
+        <div class="victoryBg">
+          <img src="./assets/stars.png" class="stars" alt="" height="30px" />
+          <img src="/assets/victory.png" alt="" width="200px" />
+        </div>
+        <p class="hurray">HURRAY!!</p>
+        <p class="won">YOU WON THE GAME</p>
+        <div style="display: flex; justify-content: center; margin: 20px">
+          <button class="playAgainBtn" onclick="playAgain()">REPLAY</button>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
