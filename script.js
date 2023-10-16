@@ -102,7 +102,7 @@ const handleSelect = (value) => {
   }
   let playerSrc = `./assets/${playerChoice}` + ".png";
   let computerSrc = `./assets/${computerChoice}` + ".png";
-
+  console.log(playerSrc, computerSrc);
   let resultDiv = `
   <div class="resultRow">
         <div class="resultHead">
@@ -112,13 +112,13 @@ const handleSelect = (value) => {
         <div class="resultShow">
         <div class="winPlayer">
           <div class="${playerChoice}Select " >
-            <img src="./assets/${playerSrc}" alt="" />
+            <img src="./assets/${playerChoice}.png" alt="" />
           </div>
           </div>
          ${winMessage}
          <div class="winPc"> 
           <div class="${computerChoice}Select ">
-          <img src="./assets/${computerSrc}" alt="" />
+          <img src="${computerSrc}" alt="" />
           </div>
           </div>
         </div>
