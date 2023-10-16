@@ -100,8 +100,8 @@ const handleSelect = (value) => {
     cScore.innerHTML = computerScore;
     winnerMessage("LOST");
   }
-  let playerSrc = `/assets/${playerChoice}` + ".png";
-  let computerSrc = `/assets/${computerChoice}` + ".png";
+  let playerSrc = `./assets/${playerChoice}` + ".png";
+  let computerSrc = `./assets/${computerChoice}` + ".png";
 
   let resultDiv = `
   <div class="resultRow">
